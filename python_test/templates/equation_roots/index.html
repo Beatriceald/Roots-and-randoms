@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equation roots</title>
+</head>
+<body>
+    {% block content %}
+    <form action="{% url 'roots' %}" method="POST">
+        {% csrf_token %}
+        <div class="row">
+            {{ form.non_field_errors }}
+            <div class="col-md-4">
+              <div class="fieldWrapper">
+                {{ form.a.errors }}
+                <label for="id_a">Введите а:</label>
+                {{ form.a }} </br> 
+              </div>
+              <div class="fieldWrapper">
+                {{ form.b.errors }}
+                <label for="id_b">Введите b:</label>
+                {{ form.b }} </br>
+              </div>
+              <div class="fieldWrapper">
+                {{ form.c.errors }}
+                <label for="id_c">Введите c:</label>
+                {{ form.c }} </br>
+              </div>
+            </div>
+        </div>
+        <div>
+            <button type="submit">Добавить</button>
+        </div>
+    </form>
+    {% endblock %}
+</body>
+</html>
