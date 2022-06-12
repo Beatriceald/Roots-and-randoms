@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'equation_roots.apps.EquationRootsConfig',
+    'randoms.apps.RandomsConfig',
 ]
 
 MIDDLEWARE = [

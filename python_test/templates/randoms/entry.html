@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Угадайка</title>
+</head>
+<body>
+{% block content %}
+<h1>Угадай какого цвета лежит предмет в мешке</h1>
+<form action="{% url 'entry' %}" method="POST">
+    {% csrf_token %}
+    <div class="row">
+        {{ form.non_field_errors }}
+        <div class="col-md-4">
+          <div class="fieldWrapper">
+            {{ form.ball.errors }}
+            <label for="id_ball">Введите число от 1 до 100: </label>
+            {{ form.ball }}
+          </div>
+          <div>
+            <button type="submit">Добавить</button>
+        </div>
+    </div>
+</form>
+{% endblock %}
+</body>
+</html>

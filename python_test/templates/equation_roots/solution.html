@@ -4,12 +4,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Solution equation roots</title>
+    <title>Решение квардратного уровнения</title>
 </head>
 <body>
     {% block content %}
-    <h1>Solution</h1>
-    {{D}}
+    <h1>Решение</h1>
+    {% if D == 0 %}
+        {{single_solution}}
+    {% elif D > 0 %}
+        {{two_solutions}}
+    {% endif %}
+    <br/>{{roots}}<br/>
+    <a href="{% url 'home' %}">
+        <button>ОК</button>
+    </a>    
     {% endblock %}
 </body>
 </html>

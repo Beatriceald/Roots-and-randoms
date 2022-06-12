@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Equation roots</title>
+    <title>Корни уравнения</title>
 </head>
 <body>
     {% block content %}
+    <h2>Проверка корней уровнения</h2>
     <form action="{% url 'roots' %}" method="POST">
         {% csrf_token %}
         <div class="row">
@@ -15,20 +16,26 @@
             <div class="col-md-4">
               <div class="fieldWrapper">
                 {{ form.a.errors }}
-                <label for="id_a">Введите а:</label>
-                {{ form.a }} </br> 
+                <label for="id_a">Введите а: </label>
+                {{ form.a }}
               </div>
+              <br/>
               <div class="fieldWrapper">
                 {{ form.b.errors }}
                 <label for="id_b">Введите b:</label>
-                {{ form.b }} </br>
+                {{ form.b }}
               </div>
+              <br/>
               <div class="fieldWrapper">
                 {{ form.c.errors }}
                 <label for="id_c">Введите c:</label>
-                {{ form.c }} </br>
+                {{ form.c }}
               </div>
+              <br/>
             </div>
+        </div>
+        <div>
+          <p>Для уровнения: a * x^2 + b * x + c = 0</p>
         </div>
         <div>
             <button type="submit">Добавить</button>
